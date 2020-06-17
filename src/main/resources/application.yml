@@ -1,0 +1,60 @@
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+#  instance:
+#    hostname: localhost
+#    lease-renewal-interval-in-seconds: 10
+#    lease-expiration-duration-in-seconds: 15
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${random.int[1,999]}
+#server:
+#  port: 8018
+regeolayer:
+  geoCodeUrl: ff8080816e1216ad016e17a77a3a0004
+  xzqgeoCodeUrl: ff8080816df8834a016df886a1820001
+spring:
+#  application:
+#    name: geodataedit
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-server
+#      fail-fast: true
+#      profile: dev
+#      label: dev
+#      retry:
+#        initial-interval: 20000
+#        max-attempts: 6
+#        max-interval: 40000
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    database-platform: com.yuntu.yungis.hibernate.JsonbPostgresDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+  flyway:
+    clean-disabled: true
+    out-of-order: false
+    baseline-on-migrate: true
+
+yuntu:
+  file:
+    download:
+      path: ${yuntu.yungis.dir}/downloadfiles
+    matchrule:
+      path: ${yuntu.yungis.dir}/matchrule
+
+swagger:
+  enable: true
+
+logging:
+  level:
+    root: INFO
